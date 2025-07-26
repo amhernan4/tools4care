@@ -96,7 +96,7 @@
 		.main-hero-content {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -178,6 +178,12 @@
             gap: 50px;
         }
 
+        @media (max-width: 992px) {
+            .header-elements {
+                padding: 20px 20px 60px 20px;
+            }
+        }
+
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
             .main-hero-content {
@@ -216,9 +222,15 @@
         }
 
         @media (max-width: 480px) {
+
+            .image-content-main {
+                max-width: 68%;
+            }
+
             .main-hero-content {
                 flex-direction: column;
                 gap: 20px;
+                padding: 0 20px;
             }
             .title-slide h1 {
                 font-size: 2.5em;
@@ -236,11 +248,11 @@
             }
         
             .header-elements {
-                padding: 15px 0 40px 0;
+                padding: 15px 0 75px 0;
             }
             .footer-elements {
                 padding: 15px;
-                max-width: 400px;
+                max-width: 385px;
             }
         }
 
@@ -540,6 +552,9 @@
         .feature-card-v2.right {
             padding: 80px 50px 80px 160px;
         }
+        .feature-card-v2.special {
+            padding: 80px 50px 80px 190px;
+        }
         
         .feature-row-v2:nth-child(even) .feature-card-v2 {
             margin-left: -5%;
@@ -645,7 +660,21 @@
                 width: 60%;
                 padding: 40px;
             }
+
+            .feature-card-v2.right {
+                width: 60%;
+                padding: 40px;
+            }
+
+            .feature-card-v2.left {
+                width: 60%;
+                padding: 40px;
+            }
             
+            .feature-card-v2.special {
+                padding: 80px 50px 80px 60px;
+            }
+
             .feature-image-v2 .feature-image-v1 {
                 width: 45%;
             }
@@ -686,8 +715,22 @@
                 width: 100%;
             }
 
+            .feature-row-v2.left,
+            .feature-row-v2.right {
+                text-align: center;
+            }
+
             .features-container-v2.center {
                 margin: 0;
+            }
+
+            .feature-card-v2.left,
+            .feature-card-v2.right {
+                margin: 0;
+            }
+
+            .feature-card-v2.special {
+                padding: 80px 50px 80px 190px;
             }
         }
         
@@ -696,6 +739,16 @@
                 font-size: 2rem;
             }
             
+            .feature-row-v2.left,
+            .feature-row-v2.right {
+                text-align: center;
+            }
+
+            .feature-card-v2.left,
+            .feature-card-v2.right {
+                margin: 0;
+            }
+
             .subtitle-v2 {
                 font-size: 1rem;
             }
@@ -721,6 +774,9 @@
                 padding: 50px 50px 50px 50px;
             }
 
+            .feature-card-v2.special {
+                padding: 80px 50px 80px 190px;
+            }
             .features-container-v2.center {
                 margin: 0;
             }
@@ -872,11 +928,35 @@
             .feature-c-card {
                 padding: 30px;
             }
+
+            .feature-card-v2.left,
+            .feature-card-v2.right,
+            .feature-card-v2.special {
+                width: 90%;
+            }
             
+
+            .feature-row-v2:nth-child(even) .feature-card-v2,
+            .feature-row-v2:nth-child(odd) .feature-card-v2 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .feature-c-row:nth-child(even) .feature-c-card{
+                margin-left: 0;
+            }
+            .feature-c-row:nth-child(odd) .feature-c-card {
+                margin-right: 0;
+            }
+
             .feature-c-row:nth-child(odd) .feature-c-image img,
             .feature-c-row:nth-child(even) .feature-c-image img {
                 margin: 0;
                 width: 100%;
+            }
+
+            .feature-card-v2.special {
+                padding: 50px;
             }
 
             .feature-image-v1.left {
@@ -893,10 +973,21 @@
                 font-size: 2rem;
             }
             
+            .feature-row-v2:nth-child(even) .feature-card-v2,
+            .feature-row-v2:nth-child(odd) .feature-card-v2 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .feature-card-v2.left,
+            .feature-card-v2.right {
+                width: 100%;
+            }
+
             .subtitle {
                 font-size: 1rem;
             }
-            
+
             .feature-c-card {
                 padding: 25px;
             }
@@ -1208,7 +1299,7 @@
             </div>
 
             <div class="feature-row-v2 right">
-                    <div class="feature-card-v2 right" style="background: linear-gradient(to bottom, #f3f3f3, #ffffff); padding: 80px 50px 80px 190px;">
+                    <div class="feature-card-v2 special" style="background: linear-gradient(to bottom, #f3f3f3, #ffffff);">
                     <span class="detail-icon">&#128137;</span> <h3 style="text-align: left;">Registro Detallado de Cuidados Vitales</h3>
                     <ul class="highlight-list numbered" style="text-align: left;">
                         <li><b>Sueroterapia, sondas vesicales y dispositivos</b> (catéteres, etc.).</li>

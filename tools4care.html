@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOLS4CARE - App Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Core Colors */
+        :root {
+            --color-white: #FFFFFF;
+            --color-soft-gray: #F2F2F7; /* Lighter */
+            --color-medium-gray: #E5E5EA; /* Slightly darker for backgrounds */
+            --color-accent-blue: #007AFF;
+            --color-secondary-green: #34C759;
+            --color-dark-text: #1C1C1E;
+            --color-light-text: #2C2C2E;
+
+
+            --color-white-card: #ffffff;
+            --color-soft-gray-card: #f8f9fc;
+            --color-primary-card: #2e6ff0;
+            --color-secondary-card: #6c757d;
+            --color-dark-card: #212529;
+            --box-shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition-card: all 0.3s ease-in-out;
+
+            --color-white-fcard: #ffffff;
+            --color-soft-gray-fcard: #f5f5f5;
+            --color-dark-text-fcard: #333333; /* Example dark text color */
+            --color-white-text-fcard: #f5f5f5;
+            --color-dark-blue-fcard: #262f50;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-white);
+            color: var(--color-dark-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-dark-text);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 3.5em; /* For title slide */
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 2.5em; /* For section headings */
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: 700;
+            font-size: 1.8em; /* For feature titles */
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 1em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            top: 50%;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+		.container-main {
+		    max-width: 1000px;
+		    margin: 0 auto;
+		    padding: 40px 20px;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    gap: 10px;
+		}
+
+		.main-hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .text-content-main {
+            text-align: center;
+        }
+
+        .text-accent-main {
+            color: var(--color-accent-blue);
+        }
+
+        .image-content-main img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        /* Adjusting header/title slide */
+        section.title-slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0;
+        
+            background-color: var(--color-white);
+            background-size: cover;
+            background-image: url("img/hero-background.png");
+            background-position: center;
+        }
+
+        .title-slide h1 {
+            color: var(--color-accent-blue);
+            font-size: 4.5em;
+            margin-bottom: 20px;
+        }
+
+        .title-slide p {
+            font-size: 1.8em;
+            color: var(--color-light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo-image {
+            width: 150px;
+            height: auto;
+        }
+        .logo-text {
+            width: 250px;
+            height: auto;
+        }
+
+
+        /* Container for the logo-text at the top */
+        .header-elements {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Container for the logo-image at the bottom */
+        .footer-elements {
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px;
+            box-sizing: border-box;
+            gap: 50px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .main-hero-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        
+            .text-content-main,
+            .image-content-main {
+                flex: none;
+                width: 100%;
+                min-width: unset;
+            }
+        
+            .image-content-main {
+                order: 2;
+            }
+        
+            .text-content-main {
+                order: 1;
+            }
+        
+            .title-slide h1 {
+                font-size: 3.5em;
+            }
+            .title-slide p {
+                font-size: 1.5em;
+            }
+
+            .header-elements {
+                padding: 15px 0 100px 0;
+            }
+            .footer-elements {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-hero-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .title-slide h1 {
+                font-size: 2.5em;
+            }
+            .title-slide p {
+                font-size: 1.2em;
+            }
+        
+            /* Adjust logos for very small screens */
+            .logo-image {
+                width: 100px;
+            }
+            .logo-text {
+                width: 180px;
+            }
+        
+            .header-elements {
+                padding: 15px 0 40px 0;
+            }
+            .footer-elements {
+                padding: 15px;
+                max-width: 400px;
+            }
+        }
+
+        section.overview-section {
+            background-color: var(--color-medium-gray);
+            padding: 100px 0;
+        }
+
+        .overview-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            text-align: left;
+            flex-wrap: wrap; /* For responsiveness */
+        }
+
+        .overview-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .overview-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 560px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overview-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        section.features-section,
+        section.enhanced-care-section,
+        section.workflow-section,
+        section.communication-section {
+            background-color: var(--color-white);
+            padding-bottom: 100px;
+        }
+
+        .features-grid,
+		.detail-grid {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		    gap: 60px;
+		    margin-top: 20px;
+		    text-align: left;
+		}
+
+		@media (max-width: 768px) {
+		    .features-grid,
+		    .detail-grid {
+		        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		    }
+		}
+
+		@media (max-width: 480px) {
+		    .features-grid,
+		    .detail-grid {
+		        grid-template-columns: repeat(auto-fit, minmax(calc(100% - 40px), 1fr));
+		        gap: 15px;
+		    }
+		}
+
+        .feature-item,
+		.detail-item-iso,
+        .detail-item {
+            background-color: var(--color-soft-gray);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .feature-item:hover,
+		.detail-item-iso:hover,
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon,
+        .detail-icon {
+            font-size: 3em;
+            color: var(--color-accent-blue);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+		.detail-item-iso h3,
+        .detail-item h3 {
+            margin-bottom: 10px;
+        }
+
+		.detail-item-iso {
+			grid-column: span 2; max-width: 800px; margin: 0 auto;
+		}
+
+		@media (max-width: 768px) {
+		    .detail-item-iso {
+		        grid-column: span 1;
+				max-width: 800px;
+				margin: 0 auto;
+		    }
+		}
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .highlight-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            line-height: 1.4;
+        }
+        .highlight-list li::before {
+            content: '•';
+            color: var(--color-accent-blue);
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+		.highlight-list.numbered li:first-child {
+			counter-reset: list-item;
+		}
+
+        .highlight-list.no-bullets li::before {
+            content: none;
+        }
+        .iso-bar-box {
+            background-color: var(--color-soft-gray);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .iso-bar-box p {
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .iso-bar-box strong {
+            color: var(--color-accent-blue);
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-accent {
+            color: var(--color-accent-blue);
+        }
+
+        .text-green {
+            color: var(--color-secondary-green);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .overview-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .overview-text, .overview-image {
+                max-width: 100%;
+            }
+            .title-slide h1 {
+                font-size: 3.5em;
+            }
+            .title-slide p {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .title-slide h1 {
+                font-size: 2.5em;
+            }
+            .title-slide p {
+                font-size: 1.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .container {
+                padding: 20px 15px;
+                gap: 50px;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .feature-item, .detail-item {
+                padding: 30px;
+            }
+        }
+
+
+        /* CARD STYLE*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container-v2 {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--color-primary-card);
+            margin-bottom: 15px;
+        }
+        
+        .subtitle-v2 {
+            font-size: 1.2rem;
+            color: var(--color-secondary-card);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .features-container-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .features-container-v2.center {
+            margin: 0px -100px 0 100px;
+        }
+        
+        .feature-row-v2 {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .feature-row-v2.left {
+            text-align: start;
+        }
+
+        .feature-row-v2.right {
+            text-align: end;
+        }
+
+        .feature-row-v2:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .feature-card-v2 {
+            background-color: var(--color-medium-gray);
+            border-radius: 20px;
+            padding: 50px;
+            width: 100%;
+            box-shadow: var(--box-shadow-card);
+            transition: var(--transition-card);
+            z-index: 2;
+            position: relative;
+        }
+
+        .feature-card-v2.left {
+            padding: 80px 160px 80px 50px;
+        }
+
+        .feature-card-v2.right {
+            padding: 80px 50px 80px 160px;
+        }
+        
+        .feature-row-v2:nth-child(even) .feature-card-v2 {
+            margin-left: -5%;
+        }
+        
+        .feature-row-v2:nth-child(odd) .feature-card-v2 {
+            margin-right: -5%;
+        }
+        
+        .feature-card-v2:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-icon-v2 {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-primary-card);
+            border-radius: 16px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .feature-icon-v2::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+        }
+        
+        .feature-card-v2 h3 {
+            font-size: 1.8rem;
+            color: var(--color-dark-card);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card-v2 p {
+            font-size: 1.1rem;
+            color: var(--color-secondary-card);
+            line-height: 1.7;
+        }
+        
+        .feature-image-v1 {
+            width: 50%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-image-v1 img {
+            width: 85%;
+            border-radius: 20px;
+            transition: var(--transition-card);
+            z-index: 100;
+        }
+
+        .feature-image-v1.left {
+            right: 100px;
+        }
+
+        .feature-image-v1.right {
+            left: 100px;
+        }
+
+        .feature-image-v2 {
+            width: 50%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-image-v2 img {
+            width: 120%;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition-card);
+        }
+        
+        .feature-row-v2:nth-child(odd) .feature-image-v2 img {
+            margin-left: -20%;
+        }
+        
+        .feature-row-v2:nth-child(even) .feature-image-v2 img {
+            margin-right: -20%;
+        }
+        
+        .feature-image-v2 img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Responsive design */
+         @media (max-width: 1400px) {
+            .features-container-v2.center {
+                margin: 0;
+            }
+         }
+
+        @media (max-width: 992px) {
+            .feature-card-v2 {
+                width: 60%;
+                padding: 40px;
+            }
+            
+            .feature-image-v2 .feature-image-v1 {
+                width: 45%;
+            }
+            
+            .feature-row-v2:nth-child(odd) .feature-image-v2 img {
+                margin-left: -15%;
+            }
+            
+            .feature-row-v2:nth-child(even) .feature-image-v2 img {
+                margin-right: -15%;
+            }
+
+            .features-container-v2.center {
+                margin: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .feature-row-v2,
+            .feature-row-v2:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .feature-card-v2,
+            .feature-image-v2,
+            .feature-image-v1 {
+                width: 100%;
+            }
+            
+            .feature-card-v2 {
+                padding: 30px;
+            }
+            
+            .feature-row-v2:nth-child(odd) .feature-image-v2 img,
+            .feature-row-v2:nth-child(even) .feature-image-v2 img {
+                margin: 0;
+                width: 100%;
+            }
+
+            .features-container-v2.center {
+                margin: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle-v2 {
+                font-size: 1rem;
+            }
+            
+            .feature-card-v2 {
+                padding: 25px;
+            }
+            
+            .feature-card-v2 h3 {
+                font-size: 1.5rem;
+            }
+            
+            .feature-icon-v2 {
+                width: 50px;
+                height: 50px;
+            }
+
+            .feature-card-v2.left {
+                padding: 50px 50px 50px 50px;
+            }
+
+            .feature-card-v2.right {
+                padding: 50px 50px 50px 50px;
+            }
+
+            .features-container-v2.center {
+                margin: 0;
+            }
+        }
+
+
+        
+        /* CARD STYLE END */
+
+        /* CARD STYLE 2 */
+        .features-c-container {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+        
+        .feature-c-row {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .feature-c-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .feature-c-card {
+            background-color: var(--color-soft-gray);
+            border-radius: 20px;
+            padding: 50px;
+            width: 55%;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition-card);
+            z-index: 2;
+            position: relative;
+        }
+        
+        .feature-c-row:nth-child(even) .feature-c-card {
+            margin-left: -5%;
+        }
+        
+        .feature-c-row:nth-child(odd) .feature-c-card {
+            margin-right: -5%;
+        }
+        
+        .feature-c-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-c-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-primary-card);
+            border-radius: 16px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .feature-c-icon::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+        }
+        
+        .feature-c-card h3 {
+            font-size: 1.8rem;
+            color: var(--color-dark);
+            margin-bottom: 20px;
+        }
+        
+        .feature-c-card p {
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+            line-height: 1.7;
+        }
+        
+        .feature-c-image {
+            width: 50%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-c-image img {
+            width: 120%;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition-card);
+        }
+        
+        .feature-c-row:nth-child(odd) .feature-c-image img {
+            margin-left: -20%;
+        }
+        
+        .feature-c-row:nth-child(even) .feature-c-image img {
+            margin-right: -20%;
+        }
+        
+        .feature-c-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .feature-c-card {
+                width: 60%;
+                padding: 40px;
+            }
+            
+            .feature-c-image {
+                width: 45%;
+            }
+            
+            .feature-c-row:nth-child(odd) .feature-c-image img {
+                margin-left: -15%;
+            }
+            
+            .feature-c-row:nth-child(even) .feature-c-image img {
+                margin-right: -15%;
+            }
+
+            .feature-image-v1.left {
+                right: 0px;
+            }
+
+            .feature-image-v1.right {
+                left: 0px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .feature-c-row,
+            .feature-c-row:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .feature-c-card,
+            .feature-c-image {
+                width: 100%;
+            }
+            
+            .feature-c-card {
+                padding: 30px;
+            }
+            
+            .feature-c-row:nth-child(odd) .feature-c-image img,
+            .feature-c-row:nth-child(even) .feature-c-image img {
+                margin: 0;
+                width: 100%;
+            }
+
+            .feature-image-v1.left {
+                right: 0px;
+            }
+
+            .feature-image-v1.right {
+                left: 0px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .feature-c-card {
+                padding: 25px;
+            }
+            
+            .feature-c-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .feature-c-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .feature-image-v1.left {
+                right: 0px;
+            }
+
+            .feature-image-v1.right {
+                left: 0px;
+            }
+        }
+        /* CARD STYLE 2 END */
+    </style>
+</head>
+<body>
+
+    <section class="title-slide">
+			<div class="header-elements">
+        		<img src="img/LOGO_MEDYCAF_ LETRAS SOBRE FONDO BLANCO.webp" alt="Medycaf logo" class="logo-text">
+        	</div>
+			<div class="main-hero-content">
+			    <div class="text-content-main">
+			        <h1 class="text-accent-main">TOOLS4CARE©</h1>
+			        <p>Revolucionando el Cuidado del Paciente y la Gestión Hospitalaria</p>
+			    </div>
+			    <div class="image-content-main">
+			        <img src="img/front-view-hand-holding-smartphone_4_65p.webp" alt="app image">
+			    </div>
+			</div>
+
+        </div>
+		<div class="footer-elements">
+			<svg style="width: 135px; height: auto;" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	viewBox="0 0 652 652" style="enable-background:new 0 0 652 652;" xml:space="preserve">
+                <style type="text/css">
+                	.st0{clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);}
+                	.st1{clip-path:url(#SVGID_5_);fill:url(#SVGID_6_);}
+                	.st2{fill:#8DC21F;}
+                	.st3{fill:#9E9E9F;}
+                </style>
+                <g>
+                	<defs>
+                		<path id="SVGID_1_" d="M79.6,353.8v56.7l57.2-56.7H79.6z M79.6,351h57.2v-57.2H79.6V351z M79.6,290.8h57.2v-56.7L79.6,290.8z"/>
+                	</defs>
+                	<clipPath id="SVGID_2_">
+                		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+                	</clipPath>
+                
+                		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-61.0266" y1="812.6143" x2="-55.1613" y2="812.6143" gradientTransform="matrix(0 -30.084 -30.084 0 24554.9063 -1425.3867)">
+                		<stop  offset="0" style="stop-color:#8DC21F"/>
+                		<stop  offset="1" style="stop-color:#DADF00"/>
+                	</linearGradient>
+                	<rect x="79.6" y="234.1" class="st0" width="57.2" height="176.5"/>
+                </g>
+                <g>
+                	<defs>
+                		<path id="SVGID_4_" d="M20,293.7l56.7,57.2v-57.2H20z M79.5,350.9h57.2v-57.2H79.5V350.9z M139.7,350.9h56.7l-56.7-57.2V350.9z"/>
+                	</defs>
+                	<clipPath id="SVGID_5_">
+                		<use xlink:href="#SVGID_4_"  style="overflow:visible;"/>
+                	</clipPath>
+                
+                		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-62.0468" y1="784.4067" x2="-56.1817" y2="784.4067" gradientTransform="matrix(30.085 0 0 -30.085 1886.666 23921.1484)">
+                		<stop  offset="0" style="stop-color:#8DC21F"/>
+                		<stop  offset="1" style="stop-color:#DADF00"/>
+                	</linearGradient>
+                	<rect x="20" y="293.7" class="st1" width="176.5" height="57.2"/>
+                </g>
+                <g>
+                	<rect x="225.7" y="193.9" class="st2" width="1.9" height="256.9"/>
+                	<polygon class="st3" points="287.5,234.3 287.5,240.4 266.2,240.4 266.2,255.6 283.1,255.6 283.1,261.6 266.2,261.6 266.2,281 
+                		287.5,281 287.5,287 260.1,287 260.1,234.3 	"/>
+                	<polygon class="st3" points="309.2,267 319.9,287 313.4,287 305,271 296.6,287 290,287 300.8,267 290,247.1 296.6,247.1 305,263.2 
+                		313.4,247.1 319.9,247.1 	"/>
+                	<path class="st3" d="M332.4,253.1v22.4c0,0,0,5.5,5.6,5.5h2.9v6h-2.9c0,0-11.6,0-11.6-11.5v-22.4h-4.2v-1c3.2-4.6,6.2-8.9,9.4-13.5
+                		h0.8v8.5h8.5v6H332.4z"/>
+                	<path class="st3" d="M354.5,281h8.5v6h-18.8v-6h4.3v-33.9h2.4l6.1,5.9c0,0,0-5.9,2.9-5.9h7.3v6h-7.3c0,0-5.4,0-5.4,5.4V281z"/>
+                	<path class="st3" d="M387.5,270.1h-9.7v5.4c0,0,0,5.5,5.5,5.5h15.7v6h-15.7c0,0-11.6,0-11.6-11.5v-17c0,0,0-11.4,11.6-11.4h4.2
+                		c0,0,11.6,0,11.6,11.4C399.1,258.5,399.1,270.1,387.5,270.1 M387.5,264c0,0,5.5,0,5.5-5.5c0-5.4-5.5-5.4-5.5-5.4h-4.2
+                		c0,0-5.5,0-5.5,5.4v5.5H387.5z"/>
+                	<path class="st3" d="M446.6,258.5V287h-6v-28.5c0,0,0-5.4-5.4-5.4c-5.5,0-5.5,5.4-5.5,5.4V287h-6.1v-28.5c0-5.4-5.4-5.4-5.4-5.4
+                		c-5.5,0-5.5,5.4-5.5,5.4V287h-6v-39.9h2.5l6,5.9c0-5.9,3-5.9,3-5.9c5.6,0,7.7,3.8,8.4,5.3c0,0,3.5-5.3,8.6-5.3
+                		C446.6,247.1,446.6,258.5,446.6,258.5"/>
+                	<path class="st3" d="M481.2,258.5V287h-2.6l-5.9-6c0,6-3.1,6-3.1,6h-4.2c0,0-11.6,0-11.6-11.5c0-11.5,11.6-11.5,11.6-11.5h9.6v-5.5
+                		c0-5.4-5.5-5.4-5.5-5.4h-13.1v-6h13.1C469.6,247.1,481.2,247.1,481.2,258.5 M475.1,270.1h-9.6c0,0-5.5,0-5.5,5.4
+                		c0,5.5,5.5,5.5,5.5,5.5h4.2c0,0,5.5,0,5.5-5.5V270.1z"/>
+                	<path class="st3" d="M501.5,247.1h9.7v-17h6.1V287h-2.5l-6-6c0,0,0,6-3,6h-4.2c0,0-11.5,0-11.5-11.5v-17
+                		C490,247.1,501.5,247.1,501.5,247.1 M496.1,275.5c0,0,0,5.5,5.4,5.5h4.2c0,0,5.4,0,5.4-5.5v-22.4h-9.7c0,0-5.4,0-5.4,5.4V275.5z"/>
+                	<path class="st3" d="M526.8,247.1h6.1v28.4c0,5.5,5.4,5.5,5.4,5.5h4.3c5.4,0,5.4-5.5,5.4-5.5v-28.4h6.1V287h-2.5l-6-6c0,6-3,6-3,6
+                		h-4.3c0,0-11.5,0-11.5-11.5V247.1z"/>
+                	<path class="st3" d="M570.8,281h8.5v6h-18.8v-6h4.2v-33.9h2.4l6.1,5.9c0,0,0-5.9,2.9-5.9h7.3v6h-7.3c0,0-5.4,0-5.4,5.4V281z"/>
+                	<path class="st3" d="M613.8,258.5V287h-2.6l-5.9-6c0,6-3.1,6-3.1,6h-4.2c0,0-11.6,0-11.6-11.5c0-11.5,11.6-11.5,11.6-11.5h9.6v-5.5
+                		c0-5.4-5.5-5.4-5.5-5.4h-13.1v-6h13.1C602.2,247.1,613.8,247.1,613.8,258.5 M607.7,270.1h-9.6c0,0-5.5,0-5.5,5.4
+                		c0,5.5,5.5,5.5,5.5,5.5h4.2c0,0,5.5,0,5.5-5.5V270.1z"/>
+                	<path class="st2" d="M310.8,356.6v54H303l-7.6-7.8c0,7.8-7.8,7.8-7.8,7.8H280c0,0-23.2,0-23.2-23.2c0-23,23.2-23,23.2-23h15.4v-7.8
+                		c0-7.6-7.8-7.6-7.8-7.6h-26.1v-15.4h26.1C287.6,333.5,310.8,333.5,310.8,356.6 M295.4,379.7H280c0,0-7.8,0-7.8,7.6
+                		c0,7.8,7.8,7.8,7.8,7.8h7.6c0,0,7.8,0,7.8-7.8V379.7z"/>
+                	<polygon class="st2" points="378.2,333.5 355.2,410.5 339.8,410.5 316.6,333.5 332.8,333.5 347.4,387.4 362.3,333.5 	"/>
+                	<path class="st2" d="M434.4,356.6v54h-7.8l-7.6-7.8c0,7.8-7.8,7.8-7.8,7.8h-7.6c0,0-23.2,0-23.2-23.2c0-23,23.2-23,23.2-23H419
+                		v-7.8c0-7.6-7.8-7.6-7.8-7.6h-26.1v-15.4h26.1C411.2,333.5,434.4,333.5,434.4,356.6 M419,379.7h-15.4c0,0-7.8,0-7.8,7.6
+                		c0,7.8,7.8,7.8,7.8,7.8h7.6c0,0,7.8,0,7.8-7.8V379.7z"/>
+                	<path class="st2" d="M504.5,356.3v54.3h-15.4v-53.8c0-7.8-7.8-7.8-7.8-7.8h-7.6c-7.8,0-7.8,7.8-7.8,7.8v53.8h-15.4v-77h7.8l7.6,7.8
+                		c0-7.8,7.8-7.8,7.8-7.8h7.6C481.3,333.5,504.5,333.2,504.5,356.3"/>
+                	<path class="st2" d="M537.8,348.9v38.4c0,0,0,7.8,7.8,7.8h7.6v15.4h-7.6c0,0-23.2,0-23.2-23.2v-38.4h-7.6v-4.7l18.2-26.1h4.8v15.4
+                		h15.4v15.4H537.8z"/>
+                	<path class="st2" d="M592.4,379.7H577l-1.5,7.6c0,0-1.3,7.8,6.5,7.8h30.8l-2.6,15.4h-30.8c0,0-23.2,0-19.2-23.2l5.4-30.8
+                		c0,0,4.1-23,27.3-23h7.6c0,0,23.2,0,19.1,23C619.5,356.6,615.5,379.7,592.4,379.7 M595,364.3c0,0,7.8,0,9.1-7.8
+                		c1.5-7.6-6.3-7.6-6.3-7.6h-7.6c0,0-7.8,0-9.3,7.6l-1.3,7.8H595z"/>
+                </g>
+            </svg>
+
+
+            <svg style="width: 55px; height: auto;" id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.33 42.54"><polygon points="9.05 42.41 9.02 33.35 15.07 33.35 15.07 35.81 12.21 35.81 12.21 36.68 14.8 36.68 14.8 38.99 12.21 38.99 12.21 39.94 15.14 39.94 15.14 42.4 9.05 42.41" fill="#57b089"/><path d="M20.03,40.36c-.09-.18-.15-.33-.2-.45s-.08-.21-.1-.31c-.02.09-.04.18-.09.29-.04.11-.12.26-.22.47l-1.03,2.05h-3.72l3.21-4.82-2.83-4.23h3.71l.67,1.48s.02.04.04.08c.12.28.21.5.25.67.03-.11.06-.22.11-.33.04-.11.1-.25.17-.42l.69-1.48h3.7l-2.83,4.23,3.22,4.82h-3.73l-1.04-2.05Z" fill="#57b089"/><path d="M4.53,1.96h18.88v2.61H7.54c-.63-.74-1.56-1.2-2.61-1.2-.14,0-.27,0-.4.02v-1.43Z" fill="#eabd26"/><polygon points="6.2 .06 7.76 1.53 23.25 1.53 23.25 .02 6.2 .06" fill="#eabd26"/><polygon points="6.2 .06 7.76 1.53 23.25 1.53 23.25 .02 6.2 .06" fill="none" stroke="#eabd26" stroke-miterlimit="3.86" stroke-width=".05"/><rect x="10.41" y="5.47" width="2" height="2.1" fill="#eabd26"/><rect x="13.91" y="5.52" width="2" height="2.1" fill="#eabd26"/><rect x="17.49" y="5.55" width="2" height="2.1" fill="#eabd26"/><rect x="21.25" y="5.45" width="2" height="2.1" fill="#eabd26"/><polygon points="10.67 8.77 9.33 11.03 23.28 11.03 23.28 8.8 10.67 8.77" fill="#eabd26"/><path d="M1.49,6.84c0,1.92,1.54,3.48,3.44,3.48s3.44-1.56,3.44-3.48-1.54-3.48-3.44-3.48-3.44,1.56-3.44,3.48M0,6.84C0,4.11,2.21,1.91,4.93,1.91s4.94,2.21,4.94,4.93-2.21,4.93-4.94,4.93S0,9.57,0,6.84" fill="#eabd26"/><path d="M2.68,6.84c0-1.24,1.01-2.25,2.25-2.25s2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25" fill="#eabd26"/><path d="M7.21,12.12h6.57s0,17.78,0,17.78c.36.81,1.24.91,1.9.91,2.71,0,2.28-5.12,2.27-6.25,0-.57-.07-9.24-.07-11.34h-1.84c-.02-.46,0-.67,0-1.08h6.73s0,19.84,0,19.84h1.54c0,.35,0,.49,0,.89l-6.25.02v-2.49c-.18,1.68-9.34,4.73-8.98-1.89l-.04-15.53c-.51.04-1.2.03-1.82,0v-.86Z" fill="#eabd26"/><path d="M7.21,12.12h6.57s0,17.78,0,17.78c.36.81,1.24.91,1.9.91,2.71,0,2.28-5.12,2.27-6.25,0-.57-.07-9.24-.07-11.34h-1.84c-.02-.46,0-.67,0-1.08h6.73s0,19.84,0,19.84h1.54c0,.35,0,.49,0,.89l-6.25.02v-2.49c-.18,1.68-9.34,4.73-8.98-1.89l-.04-15.53c-.51.04-1.2.03-1.82,0v-.86Z" fill="none" stroke="#eabd26" stroke-miterlimit="3.86" stroke-width=".05"/><path d="M28.71,42.54h-1.59v-.29h1.62c.1,0,.18-.02.23-.07.05-.05.08-.12.08-.21s-.03-.17-.08-.21c-.05-.05-.12-.07-.23-.07h-1.62v-.29h1.59c.21,0,.37.05.46.14.1.09.14.24.14.44s-.05.34-.14.43c-.1.09-.25.14-.46.14" fill="#231f20"/><polygon points="29.31 40.61 27.13 40.61 27.13 40.34 28.64 39.77 27.13 39.77 27.13 39.49 29.31 39.49 29.31 39.77 27.78 40.34 29.31 40.34 29.31 40.61" fill="#231f20"/><rect x="27.13" y="38.4" width="2.17" height=".29" fill="#231f20"/><polygon points="29.31 37.03 29.31 37.28 27.13 37.75 27.13 37.45 28.61 37.15 27.13 36.85 27.13 36.55 29.31 37.03" fill="#231f20"/><polygon points="29.31 35.91 27.13 35.91 27.13 35.05 27.4 35.05 27.4 35.62 28.04 35.62 28.04 35.1 28.3 35.1 28.3 35.62 29.03 35.62 29.03 35.05 29.31 35.05 29.31 35.91" fill="#231f20"/><path d="M28.08,34.03v-.09c0-.12-.03-.2-.08-.25-.06-.05-.15-.07-.29-.07-.12,0-.2.02-.24.07-.04.05-.07.14-.07.27v.08h.69ZM28.24,34.03h1.06v.29h-2.17v-.35c0-.24.04-.4.13-.5.09-.1.23-.15.44-.15.16,0,.29.04.38.1.09.07.14.17.16.31l1.07-.52v.31l-1.06.5h0Z" fill="#231f20" fill-rule="evenodd"/><path d="M28.92,32.63c.04-.07.07-.13.09-.19.02-.06.03-.11.03-.16,0-.09-.03-.16-.08-.21-.05-.05-.12-.08-.21-.08-.13,0-.27.1-.44.3-.02.02-.03.04-.04.05-.11.13-.2.22-.29.27-.09.05-.19.08-.3.08-.16,0-.3-.05-.41-.16-.11-.1-.16-.23-.16-.38,0-.07,0-.13.02-.2s.04-.12.07-.19h.29c-.04.06-.07.11-.09.17-.02.05-.03.11-.03.16,0,.09.03.16.08.22.05.05.13.08.22.08.12,0,.27-.11.44-.32.02-.02.03-.04.04-.05.1-.12.2-.21.29-.26.09-.05.2-.08.32-.08.17,0,.3.05.41.16.11.11.16.24.16.41,0,.06,0,.12-.03.18-.02.06-.05.13-.08.19h-.3Z" fill="#231f20"/><rect x="27.13" y="30.7" width="2.17" height=".29" fill="#231f20"/><path d="M29.02,29.59v-.15c0-.17-.06-.28-.18-.35-.12-.07-.33-.1-.63-.1s-.51.03-.63.1c-.12.07-.18.18-.18.35v.15h1.62ZM29.31,29.89h-2.17v-.39c0-.3.08-.5.24-.62.16-.12.44-.18.84-.18s.68.06.84.18c.16.12.24.33.24.62v.39Z" fill="#231f20" fill-rule="evenodd"/><path d="M27.69,27.53l.94.2v-.39l-.94.2ZM29.31,28.18l-2.17-.51v-.28l2.17-.51v.29l-.43.11v.49l.43.1v.29Z" fill="#231f20" fill-rule="evenodd"/><path d="M29.02,25.96v-.15c0-.16-.06-.28-.18-.35-.12-.07-.33-.1-.63-.1s-.51.03-.63.1c-.12.07-.18.18-.18.35v.15h1.62ZM29.31,26.26h-2.17v-.39c0-.29.08-.5.24-.62.16-.12.44-.18.84-.18s.68.06.84.18c.16.12.24.33.24.62v.39Z" fill="#231f20" fill-rule="evenodd"/><path d="M29.02,23.02v-.15c0-.16-.06-.28-.18-.35-.12-.07-.33-.1-.63-.1s-.51.03-.63.1c-.12.07-.18.18-.18.35v.15h1.62ZM29.31,23.31h-2.17v-.39c0-.29.08-.5.24-.62.16-.12.44-.18.84-.18s.68.06.84.18c.16.12.24.33.24.62v.39Z" fill="#231f20" fill-rule="evenodd"/><polygon points="29.31 21.4 27.13 21.4 27.13 20.53 27.4 20.53 27.4 21.11 28.04 21.11 28.04 20.58 28.3 20.58 28.3 21.11 29.03 21.11 29.03 20.53 29.31 20.53 29.31 21.4" fill="#231f20"/><polygon points="29.31 18.81 27.13 18.81 27.13 17.95 27.4 17.95 27.4 18.52 28.04 18.52 28.04 18 28.3 18 28.3 18.52 29.03 18.52 29.03 17.95 29.31 17.95 29.31 18.81" fill="#231f20"/><polygon points="29.31 17.38 28.2 16.98 27.13 17.36 27.13 17.07 27.85 16.83 27.13 16.59 27.13 16.3 28.2 16.68 29.31 16.28 29.31 16.59 28.55 16.83 29.31 17.07 29.31 17.38" fill="#231f20"/><polygon points="29.31 15.4 27.4 15.4 27.4 15.8 27.13 15.8 27.13 14.7 27.4 14.7 27.4 15.1 29.31 15.1 29.31 15.4" fill="#231f20"/><path d="M28.08,13.76v-.09c0-.12-.03-.2-.08-.25-.06-.05-.15-.07-.29-.07-.12,0-.2.02-.24.07-.04.05-.07.13-.07.26v.08h.69ZM28.24,13.76h1.06v.29h-2.17v-.35c0-.23.04-.4.13-.5.09-.1.23-.15.44-.15.16,0,.29.03.38.1.09.07.14.17.16.31l1.07-.51v.31l-1.06.5h0Z" fill="#231f20" fill-rule="evenodd"/><polygon points="29.31 12.32 27.13 12.32 27.13 11.46 27.4 11.46 27.4 12.03 28.04 12.03 28.04 11.51 28.3 11.51 28.3 12.03 29.03 12.03 29.03 11.46 29.31 11.46 29.31 12.32" fill="#231f20"/><polygon points="29.31 10.82 27.13 10.63 27.13 10.37 28.64 10.07 27.13 9.77 27.13 9.52 29.31 9.33 29.31 9.6 27.78 9.68 29.31 9.98 29.31 10.17 27.78 10.46 29.31 10.55 29.31 10.82" fill="#231f20"/><path d="M27.69,8.13l.94.2v-.39l-.94.19ZM29.31,8.78l-2.17-.51v-.27l2.17-.51v.3l-.43.1v.49l.43.1v.3Z" fill="#231f20" fill-rule="evenodd"/><path d="M29.02,6.56v-.15c0-.16-.06-.28-.18-.35-.12-.07-.33-.1-.63-.1s-.51.03-.63.1c-.12.07-.18.18-.18.35v.15h1.62ZM29.31,6.86h-2.17v-.39c0-.3.08-.5.24-.62.16-.12.44-.18.84-.18s.68.06.84.18c.16.12.24.33.24.62v.39Z" fill="#231f20" fill-rule="evenodd"/><path d="M28.71,4.95h-1.59v-.29h1.62c.1,0,.18-.02.23-.07.05-.05.07-.12.07-.21s-.03-.17-.07-.21c-.05-.05-.13-.07-.23-.07h-1.62v-.29h1.59c.21,0,.36.05.46.14.1.09.14.24.14.44s-.05.34-.14.43c-.1.09-.25.14-.46.14" fill="#231f20"/><path d="M28.08,2.73v-.09c0-.12-.03-.2-.08-.25-.06-.05-.15-.07-.29-.07-.12,0-.2.02-.24.07-.04.05-.07.14-.07.26v.08h.69ZM28.24,2.73h1.06v.29h-2.17v-.35c0-.23.04-.4.13-.5.09-.1.23-.15.44-.15.16,0,.29.03.38.1.09.07.14.17.16.31l1.07-.51v.31l-1.06.5h0Z" fill="#231f20" fill-rule="evenodd"/><path d="M27.69.81l.94.2v-.39l-.94.19ZM29.31,1.45l-2.17-.51v-.28l2.17-.51v.3l-.43.1v.49l.43.1v.3Z" fill="#231f20" fill-rule="evenodd"/>
+            </svg>
+
+
+            <?xml version="1.0" encoding="utf-8"?>
+
+
+            
+            <svg style="width: 155px; height: auto;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 561 273" style="enable-background:new 0 0 561 273;" xml:space="preserve">
+<style type="text/css">
+	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#158638;}
+	.st11{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st12{fill-rule:evenodd;clip-rule:evenodd;}
+</style>
+<g>
+	<g>
+		<g>
+			<path d="M319.2,62.6c2.6,0,7.7,0,7.7,0s7.8-0.3,12.4,1.5c6,2.4,8.8,6.2,11.2,10c3.9,6.4,4.3,16.1,4.3,16.1s0.2,11-3.2,17.2     c-2.7,5-5.4,8.3-10.2,11.1c-5.4,3.1-14.3,2.8-14.3,2.8s-5.9,0-8.1,0c0.1-0.2,0.7-1.2,1-3.6c0.2-1.7,0.4-3.9,0.4-5.9     c0-2.7,0-41.2,0-41.2s0-3.9-0.4-5.5C319.8,64.6,319.3,63,319.2,62.6 M328,69c0.1,1.4,0,41.2,0,45.9c3.6,0,9.3-1,13.2-5.2     c3.9-4.3,5.8-12,5.8-17.8c0-5.7-1.6-13.2-5.5-17.5C337.7,70,333.3,69,328,69"/>
+			<path d="M355.6,62.5c9,0,25.8,0,25.8,0s-2,6.7-3.4,9.7H378c0,0-0.9-0.8-1.4-1.2c-3-2-7.1-1.9-12.1-1.9c0,4,0,11.7,0,18.5h10     c1.7,0,3.7,0.1,5.3,0c-1.4,3.9-2.3,6.3-3.7,9.8c-1.2-1.4-2.8-2.3-4.8-2.9c-0.7-0.2-1.5-0.2-2.1-0.4c-1.5,0-3.1,0-4.6,0     c0,1.9,0,16,0,20.5c-0.3,0,4.9,0,4.9,0s1.5,0,2.2,0c1.6-0.2,2.6-0.2,3.9-0.5c1.6-0.5,3.3-0.9,4.7-1.6c0.5-0.3,1-0.5,1.6-0.8     c0.2-0.1,0.7-0.3,0.7-0.3l-3.3,10c0,0-21.3,0-23.9,0c0.1-0.2,0.2-0.5,0.4-1.1c0.1-0.4,0.3-0.9,0.4-1.3c0.1-0.4,0.1-0.7,0.2-1.1     c0.1-0.5,0.2-1.3,0.3-2c0-0.5,0-1,0.1-1.4c0-0.7,0.1-1.4,0.1-2.1c0.1-15,0-41.4,0-41.4s0-2,0-3c0-0.9-0.1-1.8-0.4-2.7     c-0.1-0.4-0.2-1-0.4-1.4C356,63.4,355.9,63.1,355.6,62.5"/>
+		</g>
+		<g>
+			<path d="M129.2,69c-5.9,0.1-7.3,0.9-10.7,3.2v0l3.4-9.6H138c0,0,0,0.1,0,0.1c-0.6,1.6-1,3.3-1.3,5.3c0,2.1,0,6.4,0,6.4l0,13.1     v12.7v7l0,6c0,0,0.3,5.4-2.1,10.2c-1.9,3.8-3.6,6.7-7.2,9.4c-1.6,1.2-5.8-0.5-6.7-2.1c1.9-1.1,3.2-2.9,4.4-4.8     c1.7-2.5,3.2-5.3,3.8-8.8c0.4-2.1,0.3-5.1,0.3-5.1l0-12.7V69z"/>
+			<path d="M149.9,62.6c-0.1,0.3-0.2,0.6-0.4,0.9c-0.2,0.5-0.3,1.1-0.5,1.6c-0.2,0.9-0.3,1.8-0.4,2.7c0,0.4,0,0.9,0,1.3     c0,0.5-0.1,1.1-0.1,1.7c0,3.4,0,8.2,0,7.2v4.1V94c0,5.3-0.4,11.5,1.1,15.3c1.2,2.8,2.5,4.6,5.4,5.7c0.8,0.3,2.5,0.7,3.7,0.4     c3.9-1.1,6.5-3.7,7.7-7.5c1.2-4,0.9-9.6,0.9-14.8c0-7,0-14.1,0-21.1c0-1.7,0.1-3.4-0.1-4.9c-0.1-0.5-0.1-1.3-0.3-2     c-0.2-0.6-0.4-1.2-0.5-1.8c-0.1-0.2-0.2-0.7-0.2-0.7h10.1c0,0-0.3,0.9-0.5,1.3c-0.2,0.4-0.2,0.9-0.4,1.3     c-0.1,0.9-0.4,1.8-0.4,2.7c0,0.7,0,3.4,0,3.4l-0.1,34.1v3.8c0,0,0,1.4,0,2.1v2.1c0,0,0,1.1,0.1,2.4c0.1,1.1,0.2,2.2,0.5,3.2     c0.1,0.4,0.2,0.9,0.4,1.4c0.1,0.3,0.2,0.7,0.3,1.1h-8.8c0-1.4,0-3.4,0-4.4c-0.2,0,0.7-0.5-2,1.9c-1.5,1.3-3.4,2.3-5.3,3.1     c-1,0.4-3.5,0.8-4.6,0.6c-0.1,0-0.5,0-0.7,0c-0.7-0.1-1.4-0.1-2.1-0.2c-1.2-0.3-2.5-0.5-3.6-1.1c-1.8-0.9-3.3-2.2-4.4-3.8     c-1.1-1.6-2.1-3.3-2.7-5.3c-0.4-1.2-0.6-2.6-0.7-4c0-0.7-0.2-1.4-0.1-2.2c-0.1-0.7,0-1.5-0.1-2.3c0-0.6,0-1.5,0-2.2v-8V81.5     c0-4.8-0.1-12.2-0.1-11.6l0-2.1c-0.1-0.9-0.2-2.1-0.4-3c-0.2-0.6-0.5-1.6-0.7-2.3C143,62.5,146.4,62.5,149.9,62.6"/>
+			<path d="M216.6,62.5c-0.1,0.4-0.2,0.7-0.3,0.9c-0.2,0.5-0.4,1.1-0.6,1.7c-0.3,1.1-0.4,1.6-0.4,2.7c0,0.4,0,9.4,0,12.9     c0,6.5,0.1,37.8,0,36c0.2,1.2,0.3,2.2,0.7,3.2c0.1,0.3,0.4,1.1,0.4,1.4h-8.3c-0.1-1.7-0.9-3.8-1.5-5c-1.4-2.8-4.4-8.2-4.4-8.2     l-14.7-26.7v27.4v7.1c0.1,1,0.2,2.1,0.4,3c0.1,0.4,0.3,0.9,0.4,1.4c0.1,0.4,0.2,0.7,0.4,1.1h-9.2c0.3-0.6,0.5-1.3,0.7-1.9     c0.3-1,0.6-1.8,0.7-3.3c0-0.9,0-2.6,0-3.9c0-15.6,0-37.2,0-41.5v-1.6c-0.2-0.6-0.6-1.2-0.9-1.8c-0.6-1.1-1.1-2.2-1.7-3.3     c-0.3-0.5-0.4-0.9-0.8-1.5c2.6,0,7.8,0,10.1,0c0.1,0.3,0.1,0.7,0.2,0.9c0.3,1.1,0.5,2,0.8,2.8c0.2,0.6,0.4,1.2,0.7,1.7     c2.6,4.7,19.1,35.2,19.1,35.2s0-30.7,0-35.4c0-1.2,0-1.7-0.3-2.7c-0.1-0.4-0.3-1.1-0.4-1.5c-0.1-0.3-0.3-0.7-0.4-1.1     C210.3,62.5,213.6,62.5,216.6,62.5"/>
+			<path d="M248.4,71.7c-0.3-0.3-0.9-0.6-1.3-0.8c-0.6-0.4-1.3-0.6-2-0.9c-0.4-0.2-0.9-0.4-1.4-0.5c-2-0.4-6.8-0.3-6.8-0.3     s0,44.6,0,41.8c0,1.3,0,3.6,0,4.2c0.3,4.3,0.7,4.8,1.4,6.1c-4.2,0-7.2,0-10.2,0c0.6-0.9,1.1-2.1,1.4-6.3c0,0.2,0-2.4,0-3.9     c0-2,0-41.9,0-41.9s-3,0-3.7,0c-0.3,0-2.4,0.3-3.5,0.7c-1.4,0.4-2.7,0.9-3.9,1.6c-0.6,0.3-1.7,0.9-1.7,0.9l2.7-9.8h31.4     C250.9,62.5,248.8,70,248.4,71.7"/>
+			<path d="M284.2,121.3c-3.6,0-10.8,0-10.8,0s0.1-0.5,0.3-1.4c0.4-1.4,0.4-3.4,0.1-4.9c-0.6-2.3-4-12.2-4-12.2h-14.4     c0,0-4.2,13.4-3.7,12.2c-0.4,1.2-0.6,3.3-0.2,4.9c-0.1-0.4,0.2,0.7,0.3,1.3h-10.2c0.3-0.4,0.2-0.4,0.9-1.8     c0.6-1.1,0.7-1.5,1.3-3.1c1.3-3.1,3.5-9.7,3.5-9.7L263,62.6c0,0,14.4,41.1,18,51.4c-0.4-1.1,0.8,2.2,1.3,3.2     c0.4,0.8,0.8,1.9,1.2,2.8C283.8,120.5,283.9,120.9,284.2,121.3 M257.8,96.3h9.7l-4.9-14.7v0.1L257.8,96.3z"/>
+		</g>
+		<g>
+			<path d="M217.9,167.5c-0.3-0.3-0.9-0.6-1.3-0.8c-0.6-0.4-1.3-0.6-2-0.9c-0.4-0.2-1-0.4-1.4-0.5c-2-0.6-6.8-0.3-6.8-0.3     s0,44.6,0,41.8c0,1.3,0.1,3.3,0,4c0.3,4.3,0.7,5,1.3,6.3c-4.2,0-7.2,0-10.2,0c0.6-0.9,1.1-2.1,1.4-6.3c0,0.2,0-2.4,0-3.9     c0.1-2,0-41.9,0-41.9s-3,0-3.7,0c-0.3,0-2.4,0.3-3.5,0.7c-1.4,0.4-2.7,0.9-3.9,1.6c-0.6,0.3-1.7,0.9-1.7,0.9l2.7-9.8h31.4     C220.3,158.4,218.2,165.8,217.9,167.5"/>
+			<path d="M120.5,158.4c9,0,25.8,0,25.8,0s-2,6.7-3.4,9.7h-0.1c0,0-0.9-0.8-1.4-1.2c-3-2-7.1-1.9-12.1-1.9c0,4,0,11.7,0,18.5h10     c1.7,0,3.7,0.1,5.3,0c-1.4,3.9-2.3,6.3-3.7,9.8c-1.2-1.4-2.8-2.3-4.8-2.9c-0.7-0.2-1.5-0.2-2.1-0.4c-1.5,0-3.1,0-4.6,0     c0,1.9,0,16,0,20.5c-0.3,0,4.9,0,4.9,0s1.5,0,2.2,0c1.6-0.2,2.6-0.2,3.9-0.5c1.6-0.5,3.3-0.9,4.7-1.6c0.5-0.3,1-0.5,1.6-0.8     c0.2-0.1,0.7-0.3,0.7-0.3l-3.3,10c0,0-21.3,0-23.9,0c0.1-0.2,0.2-0.5,0.4-1.1c0.1-0.4,0.3-0.9,0.4-1.3c0.1-0.4,0.1-0.7,0.2-1.1     c0.1-0.5,0.2-1.3,0.3-2c0-0.5,0-1,0.1-1.4c0-0.7,0.1-1.4,0.1-2.1c0.1-15,0-41.4,0-41.4s0-2,0-3c0-0.9-0.1-1.8-0.4-2.7     c-0.1-0.4-0.2-1-0.4-1.4C120.9,159.3,120.8,158.9,120.5,158.4"/>
+			<path d="M176.4,217.1c0.3-4.4-1.2-7.4-2.7-10.2c0.4,0.8-6-12.3-6-12.3l-6,12.7c0,0-1.2,2.3-1.7,3.5c-0.4,1-0.6,2-0.9,3.1     c-0.2,0.9-0.2,2.2-0.1,3.2c-2.7,0-7.6,0-11,0c0.5-0.4,1-1.3,1.4-1.7c1.1-1.3,3.2-4.6,2.6-3.6c-0.5,0.8,1-1.4,2-3.5     c10.3-20.9,10.3-21.2,10.3-21.2l-1.2-2.7l-3.1-6.4l-7-14.2c0,0-0.6-1.2-1-1.8c-0.5-0.7-1-1.7-1.4-2.3c-0.4-0.6-0.4-0.7-0.9-1.4     c1.1,0,10,0,11.9,0c-0.7,3,0.5,6.4,1.4,8.3c0.7,1.4,1.2,2.8,1.9,4.2c1.3,2.7,2.7,5.4,3.9,8.1c0.1,0,0,0,0.1,0     c0.4-0.5,0.6-1.2,0.8-1.8c0.6-1.2,1.2-2.5,1.8-3.8c1.2-2.6,2.6-5.1,3.7-7.8c0.5-1.2,1-2.5,1.1-3.7c0.1-1,0.1-2.7-0.2-3.6     c1.4,0,8.4,0,11.2,0c-1,1.1-2.2,2.8-2.9,4.2c-0.4,0.9-12,24-12,24s0.1-0.1,10.6,22c-0.9-2,2.1,3.9,3.3,5.7     c0.5,0.7,0.7,1.1,1.1,1.8c0.3,0.4,0.5,0.8,0.7,1C188.1,217.1,176.8,217.2,176.4,217.1"/>
+			<path d="M222.6,158.4h7.8c3.7,0,7.2,0,9.9,1c1.1,0.4,2,1,2.8,1.6c0.4,0.3,0.8,0.5,1.2,0.8c2,1.8,3.5,4.2,4.4,7     c0.3,1,0.3,1.9,0.6,2.9c0.3,1.3,0.3,3.5,0.1,4.8c0,0.3-0.1,0.5-0.1,0.8c-0.3,1.3-0.6,2.6-1.1,3.8c-1.6,4.1-4.8,6.8-8.4,9     c1,1.9,7.5,13.9,11.6,20.6c0.6,1,1.2,2,2,3c0.5,0.6,0.9,1.4,1.5,2c0,0.1,0,0-0.1,0.1c-0.3,0.7-2.5,1.7-3.5,1.9     c-0.5,0.1-0.9,0.1-1.5,0c-1.5-0.4-2.6-1.7-3.5-2.7c-0.8-0.9-1.5-1.8-2.1-2.8c-0.5-0.7-1.5-2.1-1.5-2.1l-11.6-18.2v18v2.5     c0.1,0.9,0.2,1.7,0.4,2.5c0.2,0.7,0.4,1.8,0.8,2.4c-1.6,0-10.2,0-10.2,0s0.5-0.9,0.9-2.5c0.3-0.8,0.3-1.8,0.3-2.1     c0.2-1.6,0.2-3.8,0.1-5.5c0-1.5,0-40.8,0-40.8s0-1.5,0-2.4c-0.1-1-0.1-2.2-0.4-3.2C223.1,160,222.8,159,222.6,158.4 M231.3,165     v21.3c0.6,0,1.1,0.1,2.2-0.2c2.1-0.6,3.6-1.4,4.9-2.7c1.4-1.4,2.1-3.1,2.8-5.2c0.2-0.5,0.1-0.9,0.2-1.5c0.7-3-0.6-6.8-1.9-8.6     c-0.7-0.9-2-2-3.2-2.4c-0.8-0.3-1.6-0.5-2.4-0.6C234.1,165,232.4,165,231.3,165"/>
+			<path d="M258.9,158.4c9,0,25.8,0,25.8,0s-2,6.7-3.4,9.7h-0.1c0,0-0.9-0.8-1.4-1.2c-3-2-7.1-1.9-12.1-1.9c0,4,0,11.7,0,18.5h10     c1.7,0,3.7,0.1,5.3,0c-1.4,3.9-2.3,6.3-3.7,9.8c-1.2-1.4-2.9-2.3-4.8-2.9c-0.7-0.2-1.5-0.2-2.1-0.4c-1.5,0-3.1,0-4.6,0     c0,1.9,0,16,0,20.5c-0.3,0,4.9,0,4.9,0s1.5,0,2.2,0c1.6-0.2,2.6-0.2,3.9-0.5c1.6-0.5,3.3-0.9,4.7-1.6c0.5-0.3,1-0.5,1.6-0.8     c0.2-0.1,0.7-0.3,0.7-0.3l-3.3,10c0,0-21.4,0-23.9,0c0.1-0.2,0.2-0.5,0.4-1.1c0.1-0.4,0.3-0.9,0.4-1.3c0.1-0.4,0.1-0.7,0.2-1.1     c0.1-0.5,0.2-1.3,0.3-2c0-0.5,0-1,0.1-1.4c0-0.7,0.1-1.4,0.1-2.1c0.1-15,0-41.4,0-41.4s0-2,0-3.1c0-0.9-0.1-1.8-0.4-2.6     c-0.1-0.4-0.2-1-0.4-1.4C259.2,159.3,259.1,158.9,258.9,158.4"/>
+			<path d="M333.4,158.4c-0.2,0.5-0.4,0.8-0.5,1.2c-0.2,0.5-0.3,1-0.4,1.5c-0.3,1.1-0.4,2.4-0.5,3.6c0,1.8,0.1,30.5,0,46     c0.1,0.3,0,0.7,0,1.1c0.1,0.9,0.1,2.2,0.3,3c0.2,0.9,0.9,2.2,0.9,2.4c-3.2,0-6.7,0-10.1,0c0.3-0.6,0.7-1.8,0.9-2.3     c0.3-1,0.3-1.9,0.4-3.2c0-0.3,0.1-0.6,0.1-0.9c0-1-0.1-3.5-0.1-3.5v-30.2L311.9,203l-14.4-25.7c0,0,0.1,31.4,0,32     c0,1.1,0,2.3,0.1,3.7c0.2,1.9,1,3.9,1.1,4.1c-0.5,0-7.8,0-9.3,0c0.6-1.4,1.1-2.3,1.3-4.3c0.2-1.2,0.2-2.9,0.1-4.5     c0,0.7,0-42.3,0-43.3c-0.3-0.9-0.6-1.3-0.9-1.9c-0.6-1.1-1-1.9-1.6-3.1c-0.3-0.5-0.4-0.9-0.9-1.7h10.5c-0.2,1.4-0.4,2.4,0.4,4.3     c1.3,3.2,5.1,9.9,13.1,25.1c0,0,0,0,0,0s9-18,12.3-25.5c0.3-0.8,0.6-2.1,0.1-3.9C327.3,158.4,330.6,158.4,333.4,158.4"/>
+			<path d="M532.2,217.2c-3.6,0-7.3,0-10.8,0c0.1-0.5,0.2-0.8,0.3-1.5c0.2-1.4,0.4-3.4,0-4.9c-0.6-2.3-4-12.2-4-12.2h-14.4     c0,0-3.4,10.9-3.8,12.4c-0.2,1.4-0.5,3.1-0.1,4.7c-0.2-0.7,0.2,0.8,0.3,1.4h-10.2c0.2-0.4,0.5-0.7,0.9-1.8     c0.5-1.2,0.7-1.6,1.3-3.1c1.3-3.1,3.5-9.7,3.5-9.7l15.7-44.2c0,0,14.4,41.1,18,51.4c-0.4-1.1,0.8,2.2,1.3,3.2     c0.4,0.8,0.9,2,1.2,2.8C531.7,216.2,531.9,216.6,532.2,217.2 M506.4,192.2h9.7l-4.9-14.7v0.1L506.4,192.2z"/>
+			<path d="M380.7,158.4c2.6,0,7.7,0,7.7,0s7.8-0.3,12.4,1.5c6,2.4,8.8,6.2,11.2,10c3.9,6.4,4.3,16.1,4.3,16.1s0.2,11-3.2,17.2     c-2.7,5-5.4,8.3-10.2,11.1c-5.4,3.1-14.3,2.8-14.3,2.8s-5.9,0-8.1,0c0.1-0.2,0.7-1.2,1-3.6c0.2-1.7,0.4-3.9,0.4-5.9     c0-2.7,0-41.2,0-41.2s0-3.9-0.4-5.5C381.3,160.4,380.8,158.8,380.7,158.4 M389.5,164.8c0.1,1.4,0,41.2,0,45.9     c3.6,0,9.3-1,13.2-5.2c3.9-4.3,5.8-12,5.8-17.8c0-5.7-1.6-13.2-5.5-17.5C399.2,165.9,394.8,164.9,389.5,164.8"/>
+			<path d="M427.1,158.4c-0.1,0.3-0.2,0.6-0.4,0.9c-0.2,0.5-0.3,1.1-0.5,1.6c-0.2,0.9-0.3,1.8-0.4,2.7c0,0.4,0,0.9-0.1,1.3     c0,0.5,0,1.1,0,1.7v7.2v4.1v11.9c0,5.3-0.4,11.5,1.1,15.3c1.2,2.8,2.5,4.6,5.4,5.7c0.8,0.3,2.5,0.7,3.7,0.4     c3.9-1.1,6.5-3.7,7.7-7.5c1.2-4,0.9-9.6,0.9-14.8c0-7,0-14.1,0-21.1c0-1.7,0.1-3.4-0.1-4.9c-0.1-0.5-0.1-1.3-0.3-2     c-0.2-0.6-0.4-1.2-0.5-1.8c-0.1-0.2-0.2-0.7-0.2-0.7h10.1c0,0-0.3,0.9-0.5,1.3c-0.2,0.4-0.2,0.9-0.4,1.3     c-0.1,0.9-0.4,1.8-0.4,2.7c0,0.7-0.1,3-0.1,3.4v34.1v3.8c0,0,0,1.4,0,2.1v2.1c0,0,0,1.1,0,2.4c0.1,1.1,0.2,2.2,0.5,3.2     c0.1,0.4,0.2,0.9,0.4,1.4c0.1,0.3,0.2,0.7,0.3,1.1h-8.8c0-1.4,0-3.4,0-4.4c-0.2,0,0.7-0.5-2,1.9c-1.5,1.3-3.4,2.3-5.3,3.1     c-1,0.4-3.5,0.8-4.6,0.6c-0.1,0-0.5,0-0.7,0c-0.7-0.1-1.4-0.1-2.1-0.2c-1.2-0.3-2.5-0.5-3.6-1.1c-1.8-0.9-3.3-2.2-4.4-3.8     c-1.1-1.6-2.1-3.3-2.7-5.3c-0.4-1.2-0.6-2.6-0.7-4c0-0.7-0.2-1.4-0.1-2.2c-0.1-0.7,0-1.5,0-2.3c0-0.6,0-1.5,0-2.2v-8v-11.9     c0-4.8-0.1-12.2-0.1-11.6l0-2.1c-0.1-0.9-0.2-2.1-0.4-3c-0.2-0.6-0.5-1.6-0.7-2.3C420.3,158.4,423.6,158.4,427.1,158.4"/>
+			<path d="M458.6,158.4h7.8c3.7,0,7.2,0,9.9,1c1.1,0.4,2,1,2.8,1.6c0.4,0.3,0.8,0.5,1.2,0.8c2,1.8,3.5,4.2,4.4,7     c0.3,1,0.3,1.9,0.6,2.9c0.3,1.3,0.3,3.5,0.1,4.8c0,0.3-0.1,0.5-0.1,0.8c-0.3,1.3-0.6,2.6-1.1,3.8c-1.6,4.1-4.8,6.8-8.4,9     c1,1.9,7.5,13.9,11.6,20.6c0.6,1,1.2,2,2,3c0.5,0.6,0.9,1.4,1.5,2c0,0.1,0,0,0,0.1c-0.3,0.7-2.5,1.7-3.5,1.9     c-0.5,0.1-0.9,0.1-1.5,0c-1.5-0.4-2.6-1.7-3.5-2.7c-0.8-0.9-1.5-1.8-2.1-2.8c-0.5-0.7-1.5-2.1-1.5-2.1l-11.6-18.2v18v2.5     c0.1,0.9,0.2,1.7,0.4,2.5c0.2,0.7,0.4,1.8,0.8,2.4c-1.5,0-7.4,0-10.2,0c0.2-0.3,0.5-1,0.9-2.6c0.3-0.8,0.3-1.8,0.3-2.1     c0.2-1.6,0.2-3.8,0.1-5.5c0-1.5,0-40.8,0-40.8s0-1.6,0-2.5c-0.1-1-0.1-2.2-0.4-3.2C459.1,160,458.8,159,458.6,158.4 M467.3,165     v21.3c0.6,0,1.1,0.1,2.2-0.2c2-0.6,3.6-1.4,4.9-2.7c1.4-1.4,2.1-3.1,2.8-5.2c0.2-0.5,0.1-0.9,0.2-1.5c0.7-3-0.5-6.8-1.8-8.6     c-0.7-0.9-2-2-3.2-2.4c-0.8-0.3-1.6-0.5-2.4-0.6C470.1,165,468.4,165,467.3,165"/>
+			<path d="M378.8,217.2c-3.6,0-7.2,0-10.8,0c0.3-0.6,0.3-1.4,0.5-1.8c0.4-1.3,0.1-3.1-0.1-4.6c-0.4-2.3-4-12.2-4-12.2H350     c0,0-4.1,12.9-3.5,11.8c-0.4,1.2-0.6,3.7-0.4,5.4c-0.1-0.7,0.2,0.8,0.3,1.4h-10.2c0.2-0.3,0.6-0.9,1-1.8c0.6-1.1,0.6-1.6,1.2-3.1     c1.3-3.1,3.5-9.7,3.5-9.7l15.7-44.2c0,0,14.4,41.1,18,51.4c-0.4-1.1,0.8,2.2,1.3,3.2c0.4,0.9,0.8,1.9,1.1,2.8     C378.2,216.2,378.5,216.7,378.8,217.2 M352.3,192.2h9.7l-4.9-14.7v0.1L352.3,192.2z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="28.8" y="33.9" class="st10" width="68.4" height="68.4"/>
+		<rect x="28.8" y="102.3" class="st11" width="68.4" height="68.4"/>
+		<rect x="28.8" y="170.7" class="st12" width="68.4" height="68.4"/>
+	</g>
+</g>
+</svg>
+
+
+		</div>
+
+    </section>
+
+    <section class="overview-section">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2 class="text-accent">Eficiencia Hospitalaria a un Precio Inigualable</h2>
+                    <p>Nuestra innovadora aplicación integra a la perfección el cuidado del paciente, la gestión de habitaciones y el seguimiento del estado vital, proporcionando a los profesionales de la salud una visión inigualable de las operaciones hospitalarias.</p>
+                    <p>Diseñada pensando en la <b>intuición y la velocidad</b>, TOOLS4CARE© reduce la carga administrativa, permitiendo a su equipo centrarse en lo que más importa: <b>una atención al paciente excepcional</b>.</p>
+                </div>
+                <div class="overview-image">
+					<img src="img/FOTO_ENFERMERA_REGISTRANDO_EN_TABLET.webp" alt="Medycaf nurse">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" style="padding-bottom: 0px; background: linear-gradient(to bottom,
+    #ffffff 0%,    /* Start at 0% with white */
+    #ffffff 50%,   /* Keep it white until 50% */
+    #e5e5ea 100%   /* From 50% to 100%, transition to #e5e5ea */
+  );">
+        <div class="container text-center">
+            <h2 class="text-accent">Funciones Potentes, Simplificadas</h2>
+
+            <div class="features-container-v2">
+            <!-- Feature 1 -->
+            <div class="feature-row-v2 left">
+                <div class="feature-card-v2 left">
+                    <span class="feature-icon">&#9776</span>
+                    <h3>Visión General Intuitiva del Paciente</h3>
+                    <p>Acceda a perfiles completos, historial médico y planes de tratamiento de un vistazo, directamente desde su dispositivo.</p>
+                </div>
+                <div class="feature-image-v1 left" style="z-index: 100">
+                    <!-- <img src="img/registro_detallado_vias_venosas_phone_70p.webp" alt="Intuitive Patient Overview" alt="Visión General del Paciente"> -->
+                    <img src="img/APP móvil_visión intuitiva del pac_CONSTANTES VITALES_GLUCEMIA_OXIGENOTERAPIA_layout_70p.webp" alt="Intuitive Patient Overview" alt="Visión General del Paciente">
+                </div>
+            </div>
+
+
+            <!-- Feature 2 -->
+            <div class="feature-row-v2 right">
+                <div class="feature-card-v2 right">
+                    <span class="feature-icon">&#127973;</span>
+                    <h3>Gestión Dinámica de Habitaciones</h3>
+                    <p>Monitoree la disponibilidad de camas, asigne pacientes y gestione el estado de las habitaciones en tiempo real, optimizando el flujo hospitalario.</p>
+                </div>
+                <div class="feature-image-v1 right" style="z-index: 100">
+                    <img src="img/APP_móvil_ gestión de habitaciones_layout_70p.webp" alt="Gestión de Habitaciones">
+                </div>
+            </div>
+
+            <div class="features-container-v2">
+            <!-- Feature 3 -->
+            <div class="feature-row-v2 left">
+                <div class="feature-card-v2 left" style="background: linear-gradient(to bottom, #e5e5ea, #f3f3f3);">
+                    <span class="feature-icon">&#128151;</span>
+                    <h3>Seguimiento de Estado en Tiempo Real</h3>
+                    <p>Mantenga un registro de las condiciones de los pacientes, los signos vitales y las necesidades de atención con actualizaciones y alertas inmediatas.</p>
+                </div>
+                <div class="feature-image-v1 left" style="z-index: 100">
+                    <img src="img/móvil_seguimiento de estado en tiempo real_ VALORACIÓN NEUROLÓGICA Y DEL DOLOR_70p.webp" alt="Intuitive Patient Overview" alt="Visión General del Paciente">
+                </div>
+            </div>
+
+            <!-- Feature 1 -->
+            <div class="feature-row-v2 right">
+                <!-- <div class="feature-card-v2 right" style="background-color: #ffffff"> -->
+                    <div class="feature-card-v2 right" style="background: linear-gradient(to bottom, #f3f3f3, #ffffff);">
+                    <span class="feature-icon">&#128221;</span>
+                    <h3>Documentación Segura y Confiable</h3>
+                    <p>Documente interacciones, progreso e información crítica de forma segura, garantizando la integridad y trazabilidad de los datos.</p>
+                </div>
+                <div class="feature-image-v1 right" style="z-index: 100">
+                    <img src="img/APP_móvil_generación de informes_layout_70p.webp" alt="Intuitive Patient Overview" alt="Visión General del Paciente">
+                </div>
+            </div>
+    </section>
+
+        
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="#e5e5ea"><path d="M1000 100C500 100 500 64 0 64V0h1000v100Z" opacity=".5"></path><path d="M1000 100C500 100 500 34 0 34V0h1000v100Z" opacity=".5"></path><path d="M1000 100C500 100 500 4 0 4V0h1000v100Z"></path></g></svg>
+
+    <section class="overview-section" style="background-color: var(--color-white);">
+        <div class="container text-center">
+            <h2 class="text-accent">Experimenta la Diferencia</h2>
+            <p style="font-size: 1.4em; max-width: 800px; margin: 0 auto 0px; color: var(--color-light-text);">TOOLS4CARE© redefine la accesibilidad y la colaboración en el entorno hospitalario.</p>
+
+            <div class="features-c-container">
+            <!-- Feature 1 -->
+            <div class="feature-c-row">
+                <div class="feature-c-card">
+                    <span class="feature-c-icon"></span>
+                    <h3>Visión General Intuitiva del Paciente</h3>
+                    <p>Acceda a perfiles completos, historial médico y planes de tratamiento de un vistazo, directamente desde su dispositivo.</p>
+                </div>
+                <div class="feature-c-image">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=500&q=80" alt="Visión General del Paciente">
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-c-row">
+                <div class="feature-c-card">
+                    <span class="feature-c-icon"></span>
+                    <h3>Acceso Simultáneo en Todos los Dispositivos</h3>
+                    <p>Garantiza que <b>todos los profesionales tengan acceso a la misma información</b> al mismo tiempo, fomentando una colaboración fluida.</p>
+                </div>
+                <div class="feature-c-image">
+                    <img src="img\devices_5_70p.webp" alt="Gestión de Habitaciones">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="enhanced-care-section" style="background-color: var(--color-medium-gray);">
+        <div class="container text-center" style="gap: 10px">
+            <h2 class="text-accent">Gestión Integral de Medicación y Cuidados</h2>
+            <p style="font-size: 1.4em; max-width: 800px; margin: 0 auto 0px; color: var(--color-light-text);">Nuestro sistema eleva la seguridad y precisión en cada paso de la atención al paciente.</p>
+
+
+            <div class="feature-row-v2 left">
+                    <div class="feature-card-v2 left" style="background: linear-gradient(to bottom, #f3f3f3, #ffffff);">
+                    <span class="detail-icon">&#128138;</span> <h3>Prescripción y Administración Segura</h3>
+                    <ul class="highlight-list numbered">
+                        <li><b>Prescripción segura</b> de medicamentos, minimizando errores.</li>
+                        <li><b>Administración segura</b> con verificación de seguridad integrada.</li>
+                        <li><b>Vista de horario</b> de administración de fármacos, destacando la hora actual para una gestión óptima.</li>
+                    </ul>
+                </div>
+                <div class="feature-image-v1 left" style="z-index: 100">
+                    <img src="img/APP móvil_Prescripción de medicamentos_layout_70p.webp" alt="Intuitive Patient Overview" alt="Visión General del Paciente">
+                </div>
+            </div>
+
+            <div class="feature-row-v2 right">
+                    <div class="feature-card-v2 right" style="background: linear-gradient(to bottom, #f3f3f3, #ffffff); padding: 80px 50px 80px 190px;">
+                    <span class="detail-icon">&#128137;</span> <h3 style="text-align: left;">Registro Detallado de Cuidados Vitales</h3>
+                    <ul class="highlight-list numbered" style="text-align: left;">
+                        <li><b>Sueroterapia, sondas vesicales y dispositivos</b> (catéteres, etc.).</li>
+                        <li><b>Toma de constantes vitales</b>.</li>
+                        <li><b>Valoración neurológica (Escala de Glasgow)</b>.</li>
+                        <li><b>Escala EVA del dolor y registro de heridas</b>.</li>
+                        <li>Registro de <b>glucemia, insulina, saturación de oxígeno, oxigenoterapia</b>.</li>
+                    </ul>
+                </div>
+                <div class="feature-image-v1 right" style="z-index: 100">
+                    <img src="img/APP _móvil_ registro detallado de VÍAS VENOSAS FLUIDOTERAPIA TRANSFUSIONES_layout_70p.webp" alt="Intuitive Patient Overview" alt="Visión General del Paciente">
+                </div>
+            </div>
+    </section>
+
+    <section class="workflow-section">
+        <div class="container text-center">
+            <h2 class="text-accent">Optimización del Flujo de Trabajo</h2>
+            <p style="font-size: 1.4em; max-width: 800px; margin: 0 auto 0px; color: var(--color-light-text);">Simplificamos procesos clave para una operación hospitalaria más fluida y eficiente.</p>
+
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <span class="detail-icon">&#127973;</span> <h3>Admisión y Asignación de Pacientes</h3>
+                    <p>Facilitamos la <b>asignación de cama, la admisión del paciente y el registro de datos de filiación</b> de manera rápida y precisa.</p>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">&#128196;</span> <h3>Generación de Informes Inteligente</h3>
+                    <p>Creación de <b>informes de alta e informes evolutivos</b> con datos precargados de todos los registros, simplificando la edición y adición de información.</p>
+                </div>
+                <!-- <div class="detail-item" style="grid-column: span 2; max-width: 800px; margin: 0 auto;"> <span class="detail-icon">&#128274;</span> -->
+                <div class="detail-item-iso">
+					<span class="detail-icon">&#128274;</span> <h3>Transferencia Segura del Paciente: Sistema ISOBAR</h3>
+                    <p>Implementamos el sistema <b>ISOBAR</b> para un intercambio de información seguro entre médicos y enfermería.</p>
+                    <div class="iso-bar-box">
+                        <p><strong>ISOBAR:</strong></p>
+                        <ul class="highlight-list no-bullets">
+                            <li><strong>I</strong>dentificación del paciente.</li>
+                            <li><strong>S</strong>ituación actual.</li>
+                            <li><strong>O</strong>bservaciones y valoraciones.</li>
+                            <li><strong>B</strong>ackground (antecedentes relevantes).</li>
+                            <li><strong>A</strong>cordar un plan de acción.</li>
+                            <li><strong>R</strong>econfirmación (Feedback).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="communication-section" style="background-color: var(--color-medium-gray);">
+        <div class="container text-center">
+            <h2 class="text-accent">Comunicación Instantánea y Seguridad Mejorada</h2>
+            <p style="font-size: 1.4em; max-width: 800px; margin: 0 auto 0px; color: var(--color-light-text);">Optimizamos la interacción entre el personal y protegemos a los pacientes.</p>
+
+            <div class="features-container-v2 center">
+            <!-- Feature 1 -->
+            <div class="feature-row-v2 left">
+                <div class="feature-card-v2 left" style="background-color: #ffffff">
+                    <span class="feature-icon">&#128172;</span>
+                    <h3>Chat Directo entre Profesionales y Alarma Anti-Caídas</h3>
+                    <ul class="highlight-list numbered">
+                        <li><b>Chat interno</b> para comunicación instantánea, eliminando la necesidad de desplazamientos y ahorrando tiempo valioso.</li>
+                        <li>Posibilidad de recibir <b>alarmas del sensor SEMOV</b> para prevenir caídas en pacientes con Alzheimer, demencias, parálisis, etc., garantizando su seguridad.</li>
+                    </ul>
+                </div>
+                <div class="feature-image-v1 left" style="z-index: 100">
+                    <img src="img/APP móvil_chat_layout_70p.webp" alt="Intuitive Patient Overview" alt="Visión General del Paciente">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section style="background-color: var(--color-white); padding: 200px 20px;">
+        <div class="container text-center" style="gap: 20px;">
+            <h2 class="text-accent" style="font-size: 3em;">Y Mucho Más...</h2>
+            <p style="font-size: 1.5em; max-width: 700px; margin: 0 auto;">TOOLS4CARE© es una plataforma en constante evolución, diseñada para crecer con las necesidades de su centro hospitalario y seguir ofreciendo soluciones innovadoras.</p>
+        </div>
+    </section>
+
+    <section style="background-color: var(--color-accent-blue); color: var(--color-white); padding: 80px 20px 20px 20px;">
+        <div class="container text-center" style="gap: 20px;">
+            <h2 style="color: var(--color-white); font-size: 2.8em;">Experimenta el Futuro del Cuidado</h2>
+            <p style="font-size: 1.4em; max-width: 800px; margin: 0 auto 30px;">¿Listo para transformar las operaciones de su hospital? Contáctenos para una demostración personalizada.</p>
+            <p style="font-size: 1em; max-width: 800px; margin: 80px auto 0px;">© 2025 Medycaf</p>
+
+        </div>
+    </section>
+
+</body>
+</html>
